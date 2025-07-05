@@ -1,214 +1,23 @@
 ﻿@echo off
 title lol
 color 0C
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 :: Create first message popup
 echo msgbox "RUN ONLY ON VM, it is made by sibrz” > %temp%\popup1.vbs
 start wscript %temp%\popup1.vbs
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 :: Play system beep sounds
 for /l %%i in (1,1,5) do (
     powershell -c "[console]::beep(800,200)"
     timeout /t 1 >nul
 )
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 :: Open some apps
 start calc
 start notepad
 start mspaint
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:: Fake typing
+::fake typing
 powershell -Command "$wshell = New-Object -ComObject wscript.shell; Start-Sleep 2; $wshell.SendKeys('still using the computer, lol XD')"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 :: Play a funny sound (Windows default)
 powershell -c "(New-Object Media.SoundPlayer 'C:\Windows\Media\chimes.wav').PlaySync()"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 :: Screen drawing: full-screen colored shapes
 powershell -WindowStyle Hidden -Command ^
 Add-Type -AssemblyName System.Drawing; ^
@@ -229,39 +38,7 @@ $form.StartPosition = 'CenterScreen'; ^
 $form.BackgroundImage = $bmp; ^
 $form.TopMost = $true; ^
 [void]$form.ShowDialog()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:: End message
+: End message
 echo msgbox "NOW THE SECOND PAYLOAD" > 
 %temp%\popup2.vbs
 start wscript %temp%\popup2.vbs
